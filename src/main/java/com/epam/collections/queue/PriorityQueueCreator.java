@@ -7,7 +7,7 @@ class StringComparator implements Comparator<String>
 {
     @Override
     public int compare(String o1, String o2) {
-        return o2.charAt(0) - o1.charAt(0);
+        return o2.compareTo(o1);
     }
 }
 public class PriorityQueueCreator {
