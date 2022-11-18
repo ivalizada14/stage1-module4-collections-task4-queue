@@ -9,21 +9,14 @@ public class ArrayDequeCreator extends PriorityQueue<String> {
         ArrayDeque<Integer> arrayDeque = new ArrayDeque<>();
         arrayDeque.add(firstQueue.remove()); arrayDeque.add(firstQueue.remove());
         arrayDeque.add(secondQueue.remove()); arrayDeque.add(secondQueue.remove());
-        int take = 1;
+
         while(!firstQueue.isEmpty() && !secondQueue.isEmpty())
         {
-            if(take==1)
-            {
-                firstQueue.add(arrayDeque.remove());
-                arrayDeque.add(firstQueue.remove());arrayDeque.add(firstQueue.remove());
-            }
-            else
-            {
-                secondQueue.add(arrayDeque.remove());
-                arrayDeque.add(secondQueue.remove());arrayDeque.add(secondQueue.remove());
-            }
-            if(take==1) take=2;
-            else take=1;
+            firstQueue.add(arrayDeque.remove());
+            arrayDeque.add(firstQueue.remove());arrayDeque.add(firstQueue.remove());
+            secondQueue.add(arrayDeque.remove());
+            arrayDeque.add(secondQueue.remove());arrayDeque.add(secondQueue.remove());
+
         }
         return arrayDeque;
     }
