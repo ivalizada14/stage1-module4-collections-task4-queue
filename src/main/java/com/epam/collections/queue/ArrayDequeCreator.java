@@ -16,15 +16,14 @@ public class ArrayDequeCreator extends PriorityQueue<String> {
             {
                 firstQueue.add(arrayDeque.remove());
                 arrayDeque.add(firstQueue.remove());arrayDeque.add(firstQueue.remove());
-                take = 2;
             }
             else
             {
                 secondQueue.add(arrayDeque.remove());
                 arrayDeque.add(secondQueue.remove());arrayDeque.add(secondQueue.remove());
-                take = 1;
             }
-
+            if(take==1) take=2;
+            else take=1;
         }
         return arrayDeque;
     }
